@@ -23,7 +23,7 @@ public class Player_Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Gravity
+        // Gravity
         // Physics2D.gravity = new Vector2(0, 0);
         //Jumping
         if ((Input.GetKeyDown(KeyCode.UpArrow) == true || Input.GetKeyDown(KeyCode.W) == true) && (GetComponent<Detection>().Detection_D == true))
