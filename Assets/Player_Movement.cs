@@ -33,14 +33,13 @@ public class Player_Movement : MonoBehaviour
         }
         if (jumptimeleft_J < 0)
         {
-            Physics2D.gravity = new Vector2(0, 1);
             jumptimeleft_J = 0;
         }
         if (jumptimeleft_J > 0)
         {
             jumptimeleft_J -= Time.deltaTime * 1f;
-            transform.position += Vector3.up * jumpheight_J / jumptime_J * Time.deltaTime;
-            Physics2D.gravity = new Vector2(0, 0);
+            transform.position += Vector3.up * jumptimeleft_J * Time.deltaTime;
+            
         }
         //Grounding
         if (Input.GetKeyDown(KeyCode.DownArrow) == true || Input.GetKeyDown(KeyCode.S) == true)
