@@ -11,6 +11,7 @@ public class Player_Movement : MonoBehaviour
     public float jumpheight_J;
     public float Groundspeed_G;
     public float Gravityspeed_G;
+    public bool Grounding_G;
     public float jumptimeleft_J;
     //dashing
 
@@ -23,8 +24,9 @@ public class Player_Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Gravity
-        // Physics2D.gravity = new Vector2(0, 0);
+        //Gravity
+        myRigidbody.linearVelocityY -= Gravityspeed_G * Time.deltaTime;
+        Physics2D.gravity = new Vector2(0, 0);
         //Jumping
         if ((Input.GetKeyDown(KeyCode.UpArrow) == true || Input.GetKeyDown(KeyCode.W) == true) && (GetComponent<Detection>().Detection_D == true))
         {
@@ -35,14 +37,20 @@ public class Player_Movement : MonoBehaviour
         {
             jumptimeleft_J = 0;
         }
+        if ((jumptime_J - jumptimeleft_J > 0.5) && ((GetComponent<Detection>().Detection_D == true) || (GetComponent<Detection>().Detection_U == true)))
+        {
+            jumptimeleft_J = 0;
+        }
         if (jumptimeleft_J > 0)
         {
-            jumptimeleft_J -= Time.deltaTime * 1f;
-            transform.position += Vector3.up * jumptimeleft_J * Time.deltaTime;
-            
+            jumptimeleft_J -= Time.deltaTime * 0.5f;
+            //transform.position += Vector3.up * 99/100 * jumpheight_J / jumptime_J * Time.deltaTime;
+            transform.position += Vector3.up * 102 / 100 * jumptimeleft_J * Time.deltaTime * 2 * jumpheight_J / jumptime_J / jumptime_J;
+            myRigidbody.linearVelocityY += Gravityspeed_G * Time.deltaTime;
+            jumptimeleft_J -= Time.deltaTime * 0.5f;
         }
         //Grounding
-        if (Input.GetKeyDown(KeyCode.DownArrow) == true || Input.GetKeyDown(KeyCode.S) == true)
+        if ((Input.GetKeyDown(KeyCode.DownArrow) == true || Input.GetKeyDown(KeyCode.S) == true) && Grounding_G == true)
         {
             myRigidbody.linearVelocityY = -Groundspeed_G;
         }
