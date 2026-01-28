@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.Events;
+using System;
 
 
 public class Timer : MonoBehaviour
@@ -8,7 +9,9 @@ public class Timer : MonoBehaviour
 
     [SerializeField] TextMeshProUGUI timerText;
     [SerializeField] float remainingTime;
+
     public UnityEvent onZero;
+    public string timerFormat;
 
     void Update()
     {
@@ -24,9 +27,8 @@ public class Timer : MonoBehaviour
             Time.timeScale = 1f;
         }
 
-        int minutes = Mathf.FloorToInt(remainingTime / 60F);
-        int seconds = Mathf.FloorToInt(remainingTime % 60);
-        timerText.text = string.Format("{00:00}:{1:00}", minutes, seconds);
+        TimeSpan timeSpan = TimeSpan.FromSeconds(remainingTime);
+        timerText.text = timeSpan.ToString(@timerFormat);
     }
 
     //public void Resume()
@@ -36,6 +38,12 @@ public class Timer : MonoBehaviour
     //  }
     public void Restart()
     {
+        
+    }
+
+    public float FinishTime()
+    {
+        return remainingTime;
         
     }
 }
