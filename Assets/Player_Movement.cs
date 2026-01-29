@@ -6,14 +6,17 @@ public class Player_Movement : MonoBehaviour
     public Rigidbody2D myRigidbody;
     public float movespeed_L;
     public float movelength_L;
+    public bool Moving_L;
     public float movespeed_R;
     public float movelength_R;
+    public bool Moving_R;
     public float jumptime_J;
     public float jumpheight_J;
+    public float jumptimeleft_J;
+    public bool Jumping_J;
     public float Groundspeed_G;
     public float Gravityspeed_G;
     public bool Grounding_G;
-    public float jumptimeleft_J;
     //dashing
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -29,11 +32,11 @@ public class Player_Movement : MonoBehaviour
         myRigidbody.linearVelocityY -= Gravityspeed_G * Time.deltaTime;
         Physics2D.gravity = new Vector2(0, 0);
         //Jumping
-        /*if ((Input.GetKeyDown(KeyCode.UpArrow) == true || Input.GetKeyDown(KeyCode.W) == true) && (GetComponent<Detection>().Detection_D == true))
+        if ((Input.GetKeyDown(KeyCode.UpArrow) == true || Input.GetKeyDown(KeyCode.W) == true) && (GetComponent<Detection>().Detection_D == true) && (Jumping_J == true))
         {
             jumptimeleft_J = jumptime_J;
             GetComponent<Detection>().Detection_D = false;
-        }*/
+        }
         if (jumptimeleft_J < 0)
         {
             jumptimeleft_J = 0;
@@ -55,12 +58,12 @@ public class Player_Movement : MonoBehaviour
             myRigidbody.linearVelocityY = -Groundspeed_G;
         }
         //Moving L
-        if ((Input.GetKey(KeyCode.LeftArrow) == true || Input.GetKeyDown(KeyCode.A) == true) && (GetComponent<Detection>().Detection_L == false))
+        if ((Input.GetKey(KeyCode.LeftArrow) == true || Input.GetKeyDown(KeyCode.A) == true) && (GetComponent<Detection>().Detection_L == false) && (Moving_L == true))
         {
             myRigidbody.linearVelocityX = -movespeed_L;
         }
         //Moving R
-        if ((Input.GetKey(KeyCode.RightArrow) == true || Input.GetKeyDown(KeyCode.D) == true) && (GetComponent<Detection>().Detection_R == false))
+        if ((Input.GetKey(KeyCode.RightArrow) == true || Input.GetKeyDown(KeyCode.D) == true) && (GetComponent<Detection>().Detection_R == false) && (Moving_R == true))
         {
             myRigidbody.linearVelocityX = movespeed_R;
         }
@@ -69,14 +72,47 @@ public class Player_Movement : MonoBehaviour
     }
     public void Jump(InputAction.CallbackContext ctx)
     {
-        if ((ctx.started) && (GetComponent<Detection>().Detection_D == true))
+        if ((ctx.started) && (GetComponent<Detection>().Detection_D == true) && (Jumping_J == false))
         {
             jumptimeleft_J = jumptime_J;
             GetComponent<Detection>().Detection_D = false;
         }
+        else if ((ctx.canceled) && (Jumping_J == false))
+        {
+            jumptimeleft_J = 0;
+        }
+    }
+    public void Move(InputAction.CallbackContext ctx)
+    {
+        if ((GetComponent<Detection>().Detection_R == false) && (ctx.ReadValue<Vector2>().x > 0) && (Moving_L == false) && (Moving_R == false))
+        {
+            myRigidbody.linearVelocityX = ctx.ReadValue<Vector2>().x * movespeed_L;
+        }
+        else if ((GetComponent<Detection>().Detection_L == false) && (ctx.ReadValue<Vector2>().x < 0) && (Moving_L == false) && (Moving_R == false))
+        {
+            myRigidbody.linearVelocityX = ctx.ReadValue<Vector2>().x * movespeed_R;
+        }
+    }
+    public void Placing(InputAction.CallbackContext ctx)
+    {
+        if (ctx.started)
+        {
+            Debug.Log("Placing");
+        }
         else if (ctx.canceled)
         {
-            
+            Debug.Log("Placing");
+        }
+    }
+    public void Stun(InputAction.CallbackContext ctx)
+    {
+        if (ctx.started)
+        {
+            Debug.Log("Stun");
+        }
+        else if (ctx.canceled)
+        {
+            Debug.Log("Stun");
         }
     }
 }
