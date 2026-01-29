@@ -17,6 +17,11 @@ public class Player_Movement : MonoBehaviour
     public float Groundspeed_G;
     public float Gravityspeed_G;
     public bool Grounding_G;
+
+
+
+    private float moveX;
+
     //dashing
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -58,17 +63,22 @@ public class Player_Movement : MonoBehaviour
             myRigidbody.linearVelocityY = -Groundspeed_G;
         }
         //Moving L
-        if ((Input.GetKey(KeyCode.LeftArrow) == true || Input.GetKeyDown(KeyCode.A) == true) && (GetComponent<Detection>().Detection_L == false) && (Moving_L == true))
+        if ((Input.GetKey(KeyCode.LeftArrow) == true || Input.GetKey(KeyCode.A) == true) && (GetComponent<Detection>().Detection_L == false) && (Moving_L == true))
         {
             myRigidbody.linearVelocityX = -movespeed_L;
         }
         //Moving R
-        if ((Input.GetKey(KeyCode.RightArrow) == true || Input.GetKeyDown(KeyCode.D) == true) && (GetComponent<Detection>().Detection_R == false) && (Moving_R == true))
+        if ((Input.GetKey(KeyCode.RightArrow) == true || Input.GetKey(KeyCode.D) == true) && (GetComponent<Detection>().Detection_R == false) && (Moving_R == true))
         {
             myRigidbody.linearVelocityX = movespeed_R;
         }
+        //Moving M
+        if ((Input.GetKey(KeyCode.LeftArrow) == false && Input.GetKey(KeyCode.A) == false) && (Input.GetKey(KeyCode.RightArrow) == false && Input.GetKey(KeyCode.D) == false) && (Moving_L == true) && (Moving_R == true))
+        {
+            myRigidbody.linearVelocityX = 0;
+        }
 
-
+        myRigidbody.linearVelocityX = moveX;
     }
     public void Jump(InputAction.CallbackContext ctx)
     {
@@ -86,11 +96,15 @@ public class Player_Movement : MonoBehaviour
     {
         if ((GetComponent<Detection>().Detection_R == false) && (ctx.ReadValue<Vector2>().x > 0) && (Moving_L == false) && (Moving_R == false))
         {
-            myRigidbody.linearVelocityX = ctx.ReadValue<Vector2>().x * movespeed_L;
+            moveX = ctx.ReadValue<Vector2>().x * movespeed_L;
         }
-        else if ((GetComponent<Detection>().Detection_L == false) && (ctx.ReadValue<Vector2>().x < 0) && (Moving_L == false) && (Moving_R == false))
+        if ((GetComponent<Detection>().Detection_L == false) && (ctx.ReadValue<Vector2>().x < 0) && (Moving_L == false) && (Moving_R == false))
         {
-            myRigidbody.linearVelocityX = ctx.ReadValue<Vector2>().x * movespeed_R;
+            moveX = ctx.ReadValue<Vector2>().x * movespeed_R;
+        }
+        if ((ctx.ReadValue<Vector2>().x == 0) && (Moving_L == false) && (Moving_R == false))
+        {
+            moveX = ctx.ReadValue<Vector2>().x;
         }
     }
     public void Placing(InputAction.CallbackContext ctx)
