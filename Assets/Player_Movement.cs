@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Player_Movement : MonoBehaviour
 {
@@ -28,11 +29,11 @@ public class Player_Movement : MonoBehaviour
         myRigidbody.linearVelocityY -= Gravityspeed_G * Time.deltaTime;
         Physics2D.gravity = new Vector2(0, 0);
         //Jumping
-        if ((Input.GetKeyDown(KeyCode.UpArrow) == true || Input.GetKeyDown(KeyCode.W) == true) && (GetComponent<Detection>().Detection_D == true))
+        /*if ((Input.GetKeyDown(KeyCode.UpArrow) == true || Input.GetKeyDown(KeyCode.W) == true) && (GetComponent<Detection>().Detection_D == true))
         {
             jumptimeleft_J = jumptime_J;
             GetComponent<Detection>().Detection_D = false;
-        }
+        }*/
         if (jumptimeleft_J < 0)
         {
             jumptimeleft_J = 0;
@@ -44,7 +45,6 @@ public class Player_Movement : MonoBehaviour
         if (jumptimeleft_J > 0)
         {
             jumptimeleft_J -= Time.deltaTime * 0.5f;
-            //transform.position += Vector3.up * 99/100 * jumpheight_J / jumptime_J * Time.deltaTime;
             transform.position += Vector3.up * 102 / 100 * jumptimeleft_J * Time.deltaTime * 2 * jumpheight_J / jumptime_J / jumptime_J;
             myRigidbody.linearVelocityY += Gravityspeed_G * Time.deltaTime;
             jumptimeleft_J -= Time.deltaTime * 0.5f;
@@ -66,5 +66,17 @@ public class Player_Movement : MonoBehaviour
         }
 
 
+    }
+    public void Jump(InputAction.CallbackContext ctx)
+    {
+        if ((ctx.started) && (GetComponent<Detection>().Detection_D == true))
+        {
+            jumptimeleft_J = jumptime_J;
+            GetComponent<Detection>().Detection_D = false;
+        }
+        else if (ctx.canceled)
+        {
+            
+        }
     }
 }
