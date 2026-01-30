@@ -7,6 +7,8 @@ using System.Linq;
 public class LeaderBoard : MonoBehaviour
 {
     [SerializeField]
+    private List<GameObject> players;
+    [SerializeField]
     private List<TextMeshProUGUI> names;
     [SerializeField] 
     private List<TextMeshProUGUI> scores;
@@ -31,7 +33,6 @@ public class LeaderBoard : MonoBehaviour
     {
         // Create a new list of sorted scores without changing the original.
         List<Score> sortedScores = scoreScripts.OrderBy(score => -score.playerPoints).ToList();
-
         // Iterate through all the players.
         for (int i = 0; i < names.Count; i++)
         {
@@ -39,8 +40,7 @@ public class LeaderBoard : MonoBehaviour
             int rank = sortedScores.IndexOf(scoreScripts[i]);
 
             // Move the player on the leaderboard to the position of their rank (0 is first, 3 is last).
-            names[i].transform.SetSiblingIndex(rank);
-            scores[i].transform.SetSiblingIndex(rank);
+            players[i].transform.SetSiblingIndex(rank);
         }
     }
 }
