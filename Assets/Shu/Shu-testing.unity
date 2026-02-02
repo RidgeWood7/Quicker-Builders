@@ -600,6 +600,7 @@ GameObject:
   - component: {fileID: 1463101918849979921}
   - component: {fileID: 8341573951359395264}
   - component: {fileID: 6958177943160700493}
+  - component: {fileID: 9001363525878865270}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -633,8 +634,6 @@ MonoBehaviour:
   Groundspeed_G: 100
   Gravityspeed_G: 10
   Grounding_G: 0
-  Ability_Stunfield_SA: 0
-  Ability_Stun_SA: 0
 --- !u!61 &5295378684386606908
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -735,34 +734,6 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8466388053674738736}
   m_Enabled: 1
---- !u!114 &6153106972667388402
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7292867791749214610}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0cfedc015b7ddfb4fa2cdd2b850f0a17, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  myRigidbody: {fileID: 0}
-  movespeed_L: 0
-  movelength_L: 0
-  Moving_L: 0
-  movespeed_R: 0
-  movelength_R: 0
-  Moving_R: 0
-  jumptime_J: 0
-  jumpheight_J: 0
-  jumptimeleft_J: 0
-  Jumping_J: 0
-  Groundspeed_G: 0
-  Gravityspeed_G: 0
-  Grounding_G: 0
-  Ability_Stunfield_SA: 0
-  Ability_Stun_SA: 0
 --- !u!1 &6732728915875057431
 GameObject:
   m_ObjectHideFlags: 0
@@ -965,7 +936,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8169471912005417422}
   - component: {fileID: 7940548309809077441}
-  - component: {fileID: 6153106972667388402}
+  - component: {fileID: 8169471912005417423}
   m_Layer: 0
   m_Name: Ability Stun
   m_TagString: Untagged
@@ -1054,6 +1025,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 899388551377051513}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8169471912005417423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7292867791749214610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49dc7fe3151d7e6488cb79a2e872f92b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Ability_Stunfield_SA: 0
+  Ability_Stun_SA: 0
+  isStun: 1
 --- !u!114 &8341573951359395264
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1180,6 +1166,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &9001363525878865270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3647588083331460820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49dc7fe3151d7e6488cb79a2e872f92b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Ability_Stunfield_SA: 0
+  Ability_Stun_SA: 0
+  isStun: 0
 --- !u!114 &9002038930401014847
 MonoBehaviour:
   m_ObjectHideFlags: 0

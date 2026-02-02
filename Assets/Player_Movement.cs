@@ -17,10 +17,7 @@ public class Player_Movement : MonoBehaviour
     public float Groundspeed_G;
     public float Gravityspeed_G;
     public bool Grounding_G;
-    public float Ability_Stunfield_SA;
-    public bool Ability_Stun_SA;
-    public bool isStun;
-
+    
 
     private float moveX;
 
@@ -82,15 +79,7 @@ public class Player_Movement : MonoBehaviour
 
         myRigidbody.linearVelocityX = moveX;
 
-        //Stun Ability
-        if (isStun)
-        {
-            // Find each of the children, get their detection scripts, and apply them to the parent (only if this object is the parent).
-            Detection_L = transform.Find("Detect L").GetComponent<Detection>().Detection_L;
-            Detection_R = transform.Find("Detect R").GetComponent<Detection>().Detection_R;
-            Detection_U = transform.Find("Detect U").GetComponent<Detection>().Detection_U;
-            Detection_D = transform.Find("Detect D").GetComponent<Detection>().Detection_D;
-        }
+        
     }
     public void Jump(InputAction.CallbackContext ctx)
     {
