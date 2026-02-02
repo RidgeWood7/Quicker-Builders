@@ -11,8 +11,11 @@ public class Stun : MonoBehaviour
         if (isStun)
         {
             Ability_Stunsize_SA = transform.parent.GetComponent<Stun>().Ability_Stunsize_SA;
-
+            Ability_Stun_SA = transform.parent.GetComponent<Stun>().Ability_Stun_SA;
         }
-
+        if (gameObject.name == "Ability Stun")
+        {
+            transform.localScale = Vector3.one * (2 * Ability_Stunsize_SA + 1);
+        }
     }
 }

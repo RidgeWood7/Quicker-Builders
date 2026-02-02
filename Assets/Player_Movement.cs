@@ -121,7 +121,7 @@ public class Player_Movement : MonoBehaviour
     }
     public void Stun(InputAction.CallbackContext ctx)
     {
-        if (ctx.started)
+        if ((ctx.started) && (GetComponent<Stun>().Ability_Stun_SA == true))
         {
             Debug.Log("Stun");
         }
