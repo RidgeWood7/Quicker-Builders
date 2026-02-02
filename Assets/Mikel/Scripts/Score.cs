@@ -23,6 +23,7 @@ public class Score : MonoBehaviour
     private void Update()
     {
         playerbar.fillAmount = currentScore / (float)winningPoints;
+        playerbar.fillAmount = playerPoints / (float)winningPoints;
 
         if (playerPoints >= winningPoints)
         {
