@@ -6,6 +6,7 @@ public class Coin : MonoBehaviour
     private bool _playerDead = false;
     private Transform _targetTransform;
     [SerializeField] private Transform _coin;
+    [SerializeField] private float FollowDistance;
 
     void Update()
     {
@@ -15,7 +16,7 @@ public class Coin : MonoBehaviour
             _targetTransform = null;
         }
 
-        if (_isAttatched == true)
+        if (_isAttatched == true && Vector2.Distance(transform.position,_targetTransform.position)>FollowDistance)
         {
             _coin.position = Vector2.Lerp(_coin.position, _targetTransform.position, Time.deltaTime);
         }
