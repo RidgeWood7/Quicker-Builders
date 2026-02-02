@@ -8,7 +8,10 @@ public class Trap : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            _playerMovement = collision.gameObject.GetComponent<Player_Movement>;
+            _playerMovement = collision.gameObject.GetComponent<Player_Movement>();
+            if (_playerMovement != null)
+            {
+            }
         }
     }
 }
