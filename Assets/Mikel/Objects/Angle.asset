@@ -13,3 +13,5 @@ MonoBehaviour:
   m_Name: Angle
   m_EditorClassIdentifier: 
   category: 0
+  prefab: {fileID: 4856019405518030016, guid: 23eee0c1d22f21d4a898965cbec9f0a6, type: 3}
+  icon: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}

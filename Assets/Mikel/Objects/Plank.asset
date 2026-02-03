@@ -13,3 +13,5 @@ MonoBehaviour:
   m_Name: Plank
   m_EditorClassIdentifier: 
   category: 0
+  prefab: {fileID: 3370082661205077665, guid: b00da11c986ad4e448dc0f476a5b7b60, type: 3}
+  icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}

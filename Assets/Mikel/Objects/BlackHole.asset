@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: BlackHole
   m_EditorClassIdentifier: 
   category: 1
-  prefab: {fileID: 0}
-  icon: {fileID: 0}
+  prefab: {fileID: 8828823886718335832, guid: 183969c2dcc33254dbc1030de8aef475, type: 3}
+  icon: {fileID: -1653888022784820019, guid: a631fd3fc5847fb4d830b945352e738b, type: 3}

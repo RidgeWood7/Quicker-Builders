@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: SawBlade
   m_EditorClassIdentifier: 
   category: 1
-  prefab: {fileID: 0}
-  icon: {fileID: 0}
+  prefab: {fileID: 4776024243235439959, guid: ec6ea818158afad45b912b57f40a6e19, type: 3}
+  icon: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
