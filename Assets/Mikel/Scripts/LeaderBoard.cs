@@ -14,11 +14,10 @@ public class LeaderBoard : MonoBehaviour
     private List<TextMeshProUGUI> scores;
     [SerializeField]
     private List<Score> scoreScripts;
-    private Coin _coinScript;
 
     private void Start()
     {
-        _coinScript = FindFirstObjectByType<Coin>();
+     
     }
 
     private void Update()
