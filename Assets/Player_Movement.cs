@@ -17,7 +17,13 @@ public class Player_Movement : MonoBehaviour
     public float Groundspeed_G;
     public float Gravityspeed_G;
     public bool Grounding_G;
-    
+    public float Stuntime_SA;
+    public float Stuntimeleft_SA;
+    public bool Enable_Move_ME;
+    public bool Enable_Jump_JE;
+    public bool Enable_Ground_GE;
+    public bool Enable_Stun_SAE;
+
 
     private float moveX;
 
@@ -36,12 +42,12 @@ public class Player_Movement : MonoBehaviour
         myRigidbody.linearVelocityY -= Gravityspeed_G * Time.deltaTime;
         Physics2D.gravity = new Vector2(0, 0);
         //Jumping
-        if ((Input.GetKeyDown(KeyCode.UpArrow) == true || Input.GetKeyDown(KeyCode.W) == true) && (GetComponent<Detection>().Detection_D == true) && (Jumping_J == true))
+        if ((Input.GetKeyDown(KeyCode.UpArrow) == true || Input.GetKeyDown(KeyCode.W) == true) && (GetComponent<Detection>().Detection_D == true) && (Jumping_J == true) && (Enable_Jump_JE == true))
         {
             jumptimeleft_J = jumptime_J;
             GetComponent<Detection>().Detection_D = false;
         }
-        if (jumptimeleft_J < 0)
+        if ((jumptimeleft_J < 0) || (Enable_Jump_JE == false))
         {
             jumptimeleft_J = 0;
         }
@@ -57,17 +63,17 @@ public class Player_Movement : MonoBehaviour
             jumptimeleft_J -= Time.deltaTime * 0.5f;
         }
         //Grounding
-        if ((Input.GetKeyDown(KeyCode.DownArrow) == true || Input.GetKeyDown(KeyCode.S) == true) && Grounding_G == true)
+        if ((Input.GetKeyDown(KeyCode.DownArrow) == true || Input.GetKeyDown(KeyCode.S) == true) && Grounding_G == true && Enable_Ground_GE == true)
         {
             myRigidbody.linearVelocityY = -Groundspeed_G;
         }
         //Moving L
-        if ((Input.GetKey(KeyCode.LeftArrow) == true || Input.GetKey(KeyCode.A) == true) && (GetComponent<Detection>().Detection_L == false) && (Moving_L == true))
+        if ((Input.GetKey(KeyCode.LeftArrow) == true || Input.GetKey(KeyCode.A) == true) && (GetComponent<Detection>().Detection_L == false) && (Moving_L == true) && (Enable_Move_ME == true))
         {
             myRigidbody.linearVelocityX = -movespeed_L;
         }
         //Moving R
-        if ((Input.GetKey(KeyCode.RightArrow) == true || Input.GetKey(KeyCode.D) == true) && (GetComponent<Detection>().Detection_R == false) && (Moving_R == true))
+        if ((Input.GetKey(KeyCode.RightArrow) == true || Input.GetKey(KeyCode.D) == true) && (GetComponent<Detection>().Detection_R == false) && (Moving_R == true) && (Enable_Move_ME == true))
         {
             myRigidbody.linearVelocityX = movespeed_R;
         }
@@ -79,11 +85,35 @@ public class Player_Movement : MonoBehaviour
 
         myRigidbody.linearVelocityX = moveX;
 
-        
+        //Stun
+        if (Enable_Stun_SAE == false)
+        {
+            GetComponent<Stun>().Ability_Stun_SA = false;
+        }
+        if (Enable_Stun_SAE == true)
+        {
+            GetComponent<Stun>().Ability_Stun_SA = true;
+        }
+        //Stun Timer
+        if (Stuntimeleft_SA > 0)
+        {
+            Stuntimeleft_SA -= Time.deltaTime;
+        }
+        if (Stuntimeleft_SA == 0)
+        {
+            Enable_Move_ME = true;
+            Enable_Jump_JE = true;
+            Enable_Ground_GE = true;
+            Enable_Stun_SAE = true;
+        }
+        if (Stuntimeleft_SA < 0)
+        {
+            Stuntimeleft_SA = 0;
+        }
     }
     public void Jump(InputAction.CallbackContext ctx)
     {
-        if ((ctx.started) && (GetComponent<Detection>().Detection_D == true) && (Jumping_J == false))
+        if ((ctx.started) && (GetComponent<Detection>().Detection_D == true) && (Jumping_J == false) && (Enable_Jump_JE == true))
         {
             jumptimeleft_J = jumptime_J;
             GetComponent<Detection>().Detection_D = false;
@@ -95,11 +125,11 @@ public class Player_Movement : MonoBehaviour
     }
     public void Move(InputAction.CallbackContext ctx)
     {
-        if ((GetComponent<Detection>().Detection_R == false) && (ctx.ReadValue<Vector2>().x > 0) && (Moving_L == false) && (Moving_R == false))
+        if ((GetComponent<Detection>().Detection_R == false) && (ctx.ReadValue<Vector2>().x > 0) && (Moving_L == false) && (Moving_R == false) && (Enable_Move_ME == true))
         {
             moveX = ctx.ReadValue<Vector2>().x * movespeed_L;
         }
-        if ((GetComponent<Detection>().Detection_L == false) && (ctx.ReadValue<Vector2>().x < 0) && (Moving_L == false) && (Moving_R == false))
+        if ((GetComponent<Detection>().Detection_L == false) && (ctx.ReadValue<Vector2>().x < 0) && (Moving_L == false) && (Moving_R == false) && (Enable_Move_ME == true))
         {
             moveX = ctx.ReadValue<Vector2>().x * movespeed_R;
         }
@@ -121,9 +151,13 @@ public class Player_Movement : MonoBehaviour
     }
     public void Stun(InputAction.CallbackContext ctx)
     {
-        if ((ctx.started) && (GetComponent<Stun>().Ability_Stun_SA == true))
+        if (ctx.started && (GetComponent<Stun>().Ability_Stun_SA == true) && Enable_Stun_SAE == true)
         {
-            Debug.Log("Stun");
+            Enable_Move_ME = false;
+            Enable_Jump_JE = false;
+            Enable_Ground_GE = false;
+            Enable_Stun_SAE = false;
+            Stuntimeleft_SA = Stuntime_SA;
         }
         else if (ctx.canceled)
         {
@@ -131,3 +165,12 @@ public class Player_Movement : MonoBehaviour
         }
     }
 }
+//Gonna be for stunning opponents and detecting them to do so.
+
+    /*private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Tile") && gameObject.name == "Detect L")
+        {
+            Detection_L = true;
+        }
+    }*/

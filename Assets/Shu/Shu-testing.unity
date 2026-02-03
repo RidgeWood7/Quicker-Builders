@@ -329,6 +329,17 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1017390743 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3965409488367871828, guid: 6c531d371bbdd7e499b0e8b328f9a2ce, type: 3}
+  m_PrefabInstance: {fileID: 2211983240392678136}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cfedc015b7ddfb4fa2cdd2b850f0a17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2211983240392678136
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -340,6 +351,10 @@ PrefabInstance:
     - target: {fileID: 1357137494367072606, guid: 6c531d371bbdd7e499b0e8b328f9a2ce, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 3965409488367871828, guid: 6c531d371bbdd7e499b0e8b328f9a2ce, type: 3}
+      propertyPath: Stuntime_SA
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6772519348365323754, guid: 6c531d371bbdd7e499b0e8b328f9a2ce, type: 3}
       propertyPath: m_LocalPosition.x
@@ -380,6 +395,46 @@ PrefabInstance:
     - target: {fileID: 6772519348365323754, guid: 6c531d371bbdd7e499b0e8b328f9a2ce, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8193867662541010924, guid: 6c531d371bbdd7e499b0e8b328f9a2ce, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8193867662541010924, guid: 6c531d371bbdd7e499b0e8b328f9a2ce, type: 3}
+      propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8193867662541010924, guid: 6c531d371bbdd7e499b0e8b328f9a2ce, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8193867662541010924, guid: 6c531d371bbdd7e499b0e8b328f9a2ce, type: 3}
+      propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8193867662541010924, guid: 6c531d371bbdd7e499b0e8b328f9a2ce, type: 3}
+      propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1017390743}
+    - target: {fileID: 8193867662541010924, guid: 6c531d371bbdd7e499b0e8b328f9a2ce, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8193867662541010924, guid: 6c531d371bbdd7e499b0e8b328f9a2ce, type: 3}
+      propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8193867662541010924, guid: 6c531d371bbdd7e499b0e8b328f9a2ce, type: 3}
+      propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Stun
+      objectReference: {fileID: 0}
+    - target: {fileID: 8193867662541010924, guid: 6c531d371bbdd7e499b0e8b328f9a2ce, type: 3}
+      propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Player_Movement, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8193867662541010924, guid: 6c531d371bbdd7e499b0e8b328f9a2ce, type: 3}
+      propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
