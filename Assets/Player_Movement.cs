@@ -153,16 +153,31 @@ public class Player_Movement : MonoBehaviour
     {
         if (ctx.started && (GetComponent<Stun>().Ability_Stun_SA == true) && Enable_Stun_SAE == true)
         {
-            Enable_Move_ME = false;
-            Enable_Jump_JE = false;
-            Enable_Ground_GE = false;
-            Enable_Stun_SAE = false;
-            Stuntimeleft_SA = Stuntime_SA;
+            var hit=Physics2D.CircleCastAll(transform.position, GetComponent<Stun>().Ability_Stunsize_SA, Vector2.zero);
+
+            foreach(var h in hit)
+            {
+                if (h.collider.gameObject != gameObject && h.collider.gameObject.GetComponent<Stun>() != null)
+                {
+                    h.collider.gameObject.GetComponent<Stun>().isStun_Opponent = true;
+                    h.collider.gameObject.GetComponent<Player_Movement>().Stuntimeleft_SA = Stuntime_SA;
+                    h.collider.gameObject.GetComponent<Player_Movement>().Enable_Move_ME = false;
+                    h.collider.gameObject.GetComponent<Player_Movement>().Enable_Jump_JE = false;
+                    h.collider.gameObject.GetComponent<Player_Movement>().Enable_Ground_GE = false;
+                    h.collider.gameObject.GetComponent<Player_Movement>().Enable_Stun_SAE = false;
+                }
+            }
         }
         else if (ctx.canceled)
         {
             Debug.Log("Stun");
         }
+    }
+
+    void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(transform.position, GetComponent<Stun>().Ability_Stunsize_SA);
     }
 }
 //Gonna be for stunning opponents and detecting them to do so.
