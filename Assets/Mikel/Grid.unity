@@ -336,7 +336,7 @@ Transform:
   m_GameObject: {fileID: 707420679}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.85, y: 0.78, z: 0}
+  m_LocalPosition: {x: 8.5, y: 1.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -489,7 +489,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 5.034424, y: -1.4481201}
+  m_AnchoredPosition: {x: 5.494, y: -1.58}
   m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &976195722
@@ -1028,8 +1028,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -118, y: -80}
-  m_SizeDelta: {x: 1024, y: 1024}
+  m_AnchoredPosition: {x: -118, y: 306.52795}
+  m_SizeDelta: {x: 1024, y: 250.9441}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1877668979
 MonoBehaviour:
@@ -1063,7 +1063,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1134,7 +1134,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0.030697823, w: 0}
+  m_margin: {x: 0, y: 0, z: 0.030697823, w: 4.494568}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1182,11 +1182,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 462689508726105728, guid: f1765c9f10db7104cb1078c09b6e1749, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 1024
+      value: 544
       objectReference: {fileID: 0}
     - target: {fileID: 462689508726105728, guid: f1765c9f10db7104cb1078c09b6e1749, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 1024
+      value: 544
       objectReference: {fileID: 0}
     - target: {fileID: 462689508726105728, guid: f1765c9f10db7104cb1078c09b6e1749, type: 3}
       propertyPath: m_LocalPosition.x
