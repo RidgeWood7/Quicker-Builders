@@ -3,6 +3,8 @@ using UnityEngine.InputSystem;
 
 public class Player_Movement : MonoBehaviour
 {
+    public bool isDead_D;
+
     public Rigidbody2D myRigidbody;
     public float movespeed_L;
     public float movelength_L;
@@ -38,6 +40,15 @@ public class Player_Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Death
+        if (isDead_D == true)
+        {
+            Enable_Move_ME = false;
+            Enable_Jump_JE = false;
+            Enable_Ground_GE = false;
+            Enable_Stun_SAE = false;
+        }
+        
         //Gravity
         myRigidbody.linearVelocityY -= Gravityspeed_G * Time.deltaTime;
         Physics2D.gravity = new Vector2(0, 0);
@@ -95,18 +106,22 @@ public class Player_Movement : MonoBehaviour
             GetComponent<Stun>().Ability_Stun_SA = true;
         }
         //Stun Timer
-        if (Stuntimeleft_SA > 0)
+        if (Stuntimeleft_SA > -1)
         {
             Stuntimeleft_SA -= Time.deltaTime;
         }
-        if (Stuntimeleft_SA == 0)
+        if (Stuntimeleft_SA < 1 && Stuntimeleft_SA > -1)
         {
             Enable_Move_ME = true;
             Enable_Jump_JE = true;
             Enable_Ground_GE = true;
             Enable_Stun_SAE = true;
         }
-        if (Stuntimeleft_SA < 0)
+        if (Stuntimeleft_SA < -2)
+        {
+            Stuntimeleft_SA = -2;
+        }
+        if (Stuntimeleft_SA < 0 && Stuntimeleft_SA > -2)
         {
             Stuntimeleft_SA = 0;
         }
@@ -153,14 +168,15 @@ public class Player_Movement : MonoBehaviour
     {
         if (ctx.started && (GetComponent<Stun>().Ability_Stun_SA == true) && Enable_Stun_SAE == true)
         {
+
             var hit=Physics2D.CircleCastAll(transform.position, GetComponent<Stun>().Ability_Stunsize_SA, Vector2.zero);
 
             foreach(var h in hit)
             {
-                if (h.collider.gameObject != gameObject && h.collider.gameObject.GetComponent<Stun>() != null)
+                if (h.collider.gameObject != gameObject && h.collider.gameObject.GetComponent<Stun>() != null && h.collider.gameObject.GetComponent<Player_Movement>() != null)
                 {
                     h.collider.gameObject.GetComponent<Stun>().isStun_Opponent = true;
-                    h.collider.gameObject.GetComponent<Player_Movement>().Stuntimeleft_SA = Stuntime_SA;
+                    h.collider.gameObject.GetComponent<Player_Movement>().Stuntimeleft_SA = Stuntime_SA + 1;
                     h.collider.gameObject.GetComponent<Player_Movement>().Enable_Move_ME = false;
                     h.collider.gameObject.GetComponent<Player_Movement>().Enable_Jump_JE = false;
                     h.collider.gameObject.GetComponent<Player_Movement>().Enable_Ground_GE = false;

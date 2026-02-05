@@ -152,6 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cfedc015b7ddfb4fa2cdd2b850f0a17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDead_D: 0
   myRigidbody: {fileID: 1566769826425659977}
   movespeed_L: 10
   movelength_L: 10
