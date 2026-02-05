@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Portal
   m_EditorClassIdentifier: 
   category: 4
-  prefab: {fileID: 0}
-  icon: {fileID: 0}
+  prefab: {fileID: 1254968481511066426, guid: e9a92c43b7e91ff4cb84df6f06be0124, type: 3}
+  icon: {fileID: -1653888022784820019, guid: a631fd3fc5847fb4d830b945352e738b, type: 3}

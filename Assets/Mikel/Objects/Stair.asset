@@ -13,3 +13,5 @@ MonoBehaviour:
   m_Name: Stair
   m_EditorClassIdentifier: 
   category: 0
+  prefab: {fileID: 2208239875098878366, guid: fe917b99f096dc644875156711e8eeef, type: 3}
+  icon: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
