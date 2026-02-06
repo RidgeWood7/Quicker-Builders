@@ -44,6 +44,5 @@ public class Timer : MonoBehaviour
     public float FinishTime()
     {
         return remainingTime;
-        
     }
 }
