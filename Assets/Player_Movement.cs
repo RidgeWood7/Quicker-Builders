@@ -173,7 +173,7 @@ public class Player_Movement : MonoBehaviour
 
             foreach(var h in hit)
             {
-                if (h.collider.gameObject != gameObject && h.collider.gameObject.GetComponent<Stun>() != null && h.collider.gameObject.GetComponent<Player_Movement>() != null)
+                if (h.collider.gameObject != gameObject && h.collider.gameObject.GetComponent<Stun>() != null && h.collider.gameObject.GetComponent<Player_Movement>() != null && (h.collider.gameObject.GetComponent<Player_Movement>().Stuntimeleft_SA < 1 && h.collider.gameObject.GetComponent<Player_Movement>().Stuntimeleft_SA > -1))
                 {
                     h.collider.gameObject.GetComponent<Stun>().isStun_Opponent = true;
                     h.collider.gameObject.GetComponent<Player_Movement>().Stuntimeleft_SA = Stuntime_SA + 1;
