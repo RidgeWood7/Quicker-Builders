@@ -110,7 +110,7 @@ public class Player_Movement : MonoBehaviour
         {
             Stuntimeleft_SA -= Time.deltaTime;
         }
-        if (Stuntimeleft_SA < 1 && Stuntimeleft_SA > -1)
+        if (Stuntimeleft_SA < 1 && Stuntimeleft_SA > -1 && isDead_D != true)
         {
             Enable_Move_ME = true;
             Enable_Jump_JE = true;
