@@ -1,0 +1,265 @@
+fileFormatVersion: 2
+guid: 5c4e34af0028d3e4fa16091a415d0ab5
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5160287845508964351
+    second: Gridthing 1_0
+  - first:
+      213: -3888643976987735678
+    second: Gridthing 1_1
+  - first:
+      213: -55570461233173485
+    second: Gridthing 1_2
+  - first:
+      213: 2758024019469253069
+    second: Gridthing 1_3
+  - first:
+      213: -2909384841277745691
+    second: Gridthing 1_4
+  - first:
+      213: -6462068400762734038
+    second: Gridthing 1_5
+  - first:
+      213: 4689769854800884026
+    second: Gridthing 1_6
+  - first:
+      213: -6366206912362469064
+    second: Gridthing 1_7
+  - first:
+      213: -8855952539386330137
+    second: Gridthing 1_8
+  - first:
+      213: -926845247490127770
+    second: Gridthing 1_9
+  - first:
+      213: -1066824940665220416
+    second: Gridthing 1_10
+  - first:
+      213: 6499777910317927076
+    second: Gridthing 1_11
+  - first:
+      213: -1044188903135759206
+    second: Gridthing 1_12
+  - first:
+      213: -824716111349846259
+    second: Gridthing 1_13
+  - first:
+      213: 8605557392819701548
+    second: Gridthing 1_14
+  - first:
+      213: -950057247326763579
+    second: Gridthing 1_15
+  - first:
+      213: 7267014026773821862
+    second: Gridthing 1_16
+  - first:
+      213: -5135780289436046807
+    second: Gridthing 1_17
+  - first:
+      213: 2138575923352863969
+    second: Gridthing 1_18
+  - first:
+      213: 2322864991450042666
+    second: Gridthing 1_19
+  - first:
+      213: 7043819213695364123
+    second: Gridthing 1_20
+  - first:
+      213: -7955106816338832084
+    second: Gridthing 1_21
+  - first:
+      213: -8917770010902748216
+    second: Gridthing 1_22
+  - first:
+      213: 6932435845172503200
+    second: Gridthing 1_23
+  - first:
+      213: -1165799267943264981
+    second: Gridthing 1_24
+  - first:
+      213: -6379712906475074815
+    second: Gridthing 1_25
+  - first:
+      213: -8222374567129704
+    second: Gridthing 1_26
+  - first:
+      213: -5467888799963556810
+    second: Gridthing 1_27
+  - first:
+      213: -3021973778078638895
+    second: Gridthing 1_28
+  - first:
+      213: 7925969309425245685
+    second: Gridthing 1_29
+  - first:
+      213: -4120090963317874081
+    second: Gridthing 1_30
+  - first:
+      213: 2098462605936430303
+    second: Gridthing 1_31
+  - first:
+      213: -4815937251170287815
+    second: Gridthing 1_32
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Gridthing 1_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 128
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fffd35284760d9740800000000000000
+      internalID: 5160287845508964351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 7abf0e5523a707c4aa7bd3ba89641c37
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Gridthing 1_0: 5160287845508964351
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
