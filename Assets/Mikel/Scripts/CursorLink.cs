@@ -23,6 +23,7 @@ public class CursorLink : MonoBehaviour
     }
     public void Select(InputAction.CallbackContext ctx)
     {
+        Debug.Log("Selecting");
         if (ctx.started)
         {
             PointerEventData data = new(EventSystem.current)
@@ -41,7 +42,6 @@ public class CursorLink : MonoBehaviour
                     trigger.OnPointerClick(data);
                 }
             }
-            cursor.gameObject.SetActive(false);
         }
     }
 }

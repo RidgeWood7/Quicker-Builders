@@ -5,13 +5,35 @@ using UnityEngine.InputSystem;
 public class PlaceAbleObject : MonoBehaviour
 {
     public bool isGrabbed;
-    public int playerIndex;
+    public PlayerInput player;
+
+    void Start()
+    {
+        isGrabbed = true;
+    }
 
     private void Update()
     {
-        Vector2 screenPos = FindObjectsByType<PlayerInput>(FindObjectsInactive.Include, FindObjectsSortMode.None).First(item => item.playerIndex == playerIndex).GetComponent<CursorLink>().cursor.transform.position;
-        Vector2 worldPos = Camera.main.ScreenToWorldPoint(screenPos);
+        if (isGrabbed)
+        {
+            Vector2 screenPos = player.GetComponent<CursorLink>().cursor.transform.position;
+            Vector2 worldPos = Camera.main.ScreenToWorldPoint(screenPos);
+            worldPos.x = Mathf.Round(worldPos.x);
+            worldPos.y = Mathf.Round(worldPos.y);
 
-        transform.position = worldPos;
+            transform.position = worldPos;
+        }
+    }
+
+    public void Place(InputAction.CallbackContext ctx)
+    {
+        if (ctx.started)
+        {
+            Debug.Log("Place");
+            isGrabbed = false;
+
+            player.GetComponent<CursorLink>().cursor.gameObject.SetActive(false);
+            player.actionEvents[2].RemoveListener(Place);
+        }
     }
 }

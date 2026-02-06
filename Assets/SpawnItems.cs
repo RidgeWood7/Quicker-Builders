@@ -4,6 +4,7 @@ using System.Linq;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using System.Collections;
 
 public class SpawnItems : MonoBehaviour
 {
@@ -27,20 +28,24 @@ public class SpawnItems : MonoBehaviour
             var button = Instantiate(ButtonPrefab, transform).GetComponent<EventTrigger>();
 
             button.GetComponent<Image>().sprite = obj.icon;
-            button.triggers.First(item => item.eventID == EventTriggerType.PointerClick).callback.AddListener(data => SpawmGameObject(data, obj.prefab,button.gameObject));
+            button.triggers.First(item => item.eventID == EventTriggerType.PointerClick).callback.AddListener(data => StartCoroutine(SpawmGameObject(data, obj.prefab, button.gameObject)));
         }
 
         gameObject.SetActive(true);
     }
 
-    public void SpawmGameObject(BaseEventData data, GameObject obj, GameObject button)
+    public IEnumerator SpawmGameObject(BaseEventData data, GameObject obj, GameObject button)
     {
         int playerIndex = (data as PointerEventData).pointerId;
 
-        var newObject = Instantiate(obj, Vector3.zero, Quaternion.identity);
-        newObject.GetComponent<PlaceAbleObject>().playerIndex = playerIndex;
+        var newObject = Instantiate(obj, Vector3.zero, Quaternion.identity).GetComponent<PlaceAbleObject>();
+        newObject.player = FindObjectsByType<PlayerInput>(FindObjectsInactive.Include, FindObjectsSortMode.None).First(item => item.playerIndex == playerIndex);
+        EventSystem.current.SetSelectedGameObject(null);
 
         Destroy(button);
+        yield return new WaitForSeconds(0.1f);
+
+        newObject.player.actionEvents[2].AddListener(newObject.Place);
     }
 
     
