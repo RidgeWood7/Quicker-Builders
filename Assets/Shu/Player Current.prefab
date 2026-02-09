@@ -519,26 +519,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Ability_Stunsize_SA: 2
   Ability_Stun_SA: 1
-<<<<<<< HEAD
-  isStun: 0
---- !u!114 &6478440605415643404
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1357137494367072606}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b5fd6795114186b43946dba56c0bbb5d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cursor: {fileID: 0}
-=======
   isStunchild: 0
   isStun_Me: 0
   isStun_Opponent: 0
->>>>>>> ad4613d0c49a466a8003b84fb8fbe9cd7ead82e5
 --- !u!1 &1738025077268335106
 GameObject:
   m_ObjectHideFlags: 0
