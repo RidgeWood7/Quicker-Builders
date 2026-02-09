@@ -428,7 +428,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -6470460504253458178, guid: 041578cc35cea3949bc4a8d9dc8be224, type: 3}
+  m_Sprite: {fileID: -3773684834868217901, guid: 6f63a5fb0e7031347867759b96b6bf51, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -590,7 +590,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -4645749091923375373, guid: b3bd1ac0f953b0f499c928be2c15e36a, type: 3}
+  m_Sprite: {fileID: -4050604628817834397, guid: 18b7b502d8b95f24b904ba73be7754db, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1934,7 +1934,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 6937817954938267909, guid: 7206c619273336a4980fcd3221a2d5e7, type: 3}
+  m_Sprite: {fileID: 9036078629699496907, guid: e2f4e222c55dc19498ebe10ef5a016f2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2149,7 +2149,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 6594322646378050474, guid: f9643d9eaaf086e429e8498d6ef43e98, type: 3}
+  m_Sprite: {fileID: 7135355216295414521, guid: 569c231b6d5f0ac4f9451a79ab2d1d6a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3459,7 +3459,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 4857205466551783528, guid: 31dc145185cd7f2459c97fb34a0507f0, type: 3}
+  m_Sprite: {fileID: 1787545173460610435, guid: 930478d768d94c146a74d3373e0d85ea, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5081,7 +5081,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -3579608157285764922, guid: 6a8c98c786bf95e458a7b2d552631c66, type: 3}
+  m_Sprite: {fileID: 8424878943133622891, guid: 58d3f7f7b73270c44b11a280ce4c3e18, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1

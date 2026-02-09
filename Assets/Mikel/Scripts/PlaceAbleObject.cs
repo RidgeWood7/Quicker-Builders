@@ -1,45 +1,39 @@
+using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlaceAbleObject : MonoBehaviour
 {
     public bool isGrabbed;
-    public Vector2 position;
-    public bool isMouseControlled;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public PlayerInput player;
+
     void Start()
     {
-        
+        isGrabbed = true;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        if (isGrabbed&& isMouseControlled)
+        if (isGrabbed)
         {
-            Vector3 mousePosition = Mouse.current.position.ReadValue();
-            mousePosition.z = 10f; // Set this to be the distance from the camera to the object
-            Vector3 worldPosition = Camera.main.ScreenToWorldPoint(mousePosition);
-            worldPosition.x=Mathf.Round(worldPosition.x);
-            worldPosition.y=Mathf.Round(worldPosition.y);
+            Vector2 screenPos = player.GetComponent<CursorLink>().cursor.transform.position;
+            Vector2 worldPos = Camera.main.ScreenToWorldPoint(screenPos);
+            worldPos.x = Mathf.Round(worldPos.x);
+            worldPos.y = Mathf.Round(worldPos.y);
 
-            transform.position = worldPosition;
+            transform.position = worldPos;
         }
     }
 
-    public void PlacedDown(InputAction.CallbackContext ctx)
+    public void Place(InputAction.CallbackContext ctx)
     {
-         isGrabbed = true;
-    }
+        if (ctx.started)
+        {
+            Debug.Log("Place");
+            isGrabbed = false;
 
-    public void Move()
-    {
-        Vector3 mousePosition = Mouse.current.position.ReadValue();
-        mousePosition.z = 10f; // Set this to be the distance from the camera to the object
-        Vector3 worldPosition = Camera.main.ScreenToWorldPoint(mousePosition);
-        worldPosition.x = Mathf.Round(worldPosition.x);
-        worldPosition.y = Mathf.Round(worldPosition.y);
-
-        transform.position = worldPosition;
+            player.GetComponent<CursorLink>().cursor.gameObject.SetActive(false);
+            player.actionEvents[2].RemoveListener(Place);
+        }
     }
 }

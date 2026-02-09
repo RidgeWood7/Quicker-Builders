@@ -3,6 +3,8 @@ using UnityEngine;
 using System.Linq;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
+using System.Collections;
 
 public class SpawnItems : MonoBehaviour
 {
@@ -11,6 +13,11 @@ public class SpawnItems : MonoBehaviour
 
     public void Spawn()
     {
+        foreach (var item in FindObjectsByType<Cursor>(FindObjectsInactive.Include, FindObjectsSortMode.None))
+        {
+            item.gameObject.SetActive(true);
+        }
+
         List<LevelObject> shuffleObjects = levelObjects.OrderBy(x => Random.Range(-1f,1f)).ToList();
         int playercount = FindObjectsByType<PlayerInput>(FindObjectsSortMode.None).Length;
 
@@ -18,27 +25,35 @@ public class SpawnItems : MonoBehaviour
 
         foreach (LevelObject obj in selectedObjects)
         {
-            Button button = Instantiate(ButtonPrefab, transform).GetComponent<Button>();
-            button.image.sprite = obj.icon;
-            button.onClick.AddListener(() => SpawmGameObject(obj.prefab,button.gameObject));
+            var button = Instantiate(ButtonPrefab, transform).GetComponent<EventTrigger>();
+
+            button.GetComponent<Image>().sprite = obj.icon;
+            button.triggers.First(item => item.eventID == EventTriggerType.PointerClick).callback.AddListener(data => StartCoroutine(SpawmGameObject(data, obj.prefab, button.gameObject)));
         }
+
+        gameObject.SetActive(true);
     }
 
-    public void SpawmGameObject(GameObject obj,GameObject button)
+    public IEnumerator SpawmGameObject(BaseEventData data, GameObject obj, GameObject button)
     {
-        Instantiate(obj, Vector3.zero, Quaternion.identity);
+        int playerIndex = (data as PointerEventData).pointerId;
+
+        var newObject = Instantiate(obj, Vector3.zero, Quaternion.identity).GetComponent<PlaceAbleObject>();
+        newObject.player = FindObjectsByType<PlayerInput>(FindObjectsInactive.Include, FindObjectsSortMode.None).First(item => item.playerIndex == playerIndex);
+        EventSystem.current.SetSelectedGameObject(null);
+
         Destroy(button);
+        yield return new WaitForSeconds(0.1f);
+
+        newObject.player.actionEvents[2].AddListener(newObject.Place);
     }
 
-    public void Awake()
-    {
-        Spawn();
-    }
+    
     private void Update()
     {
         if (GetComponentsInChildren<Button>().Length==0)
         {
-            Destroy(gameObject);
+         //   gameObject.SetActive(false);
         }
     }
 
