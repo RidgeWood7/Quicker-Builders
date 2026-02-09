@@ -112,7 +112,7 @@ GameObject:
   - component: {fileID: 6717774355396894119}
   - component: {fileID: 8193867662541010924}
   - component: {fileID: 7909900556047474847}
-  - component: {fileID: 6478440605415643404}
+  - component: {fileID: 6315028576557841422}
   m_Layer: 0
   m_Name: Player Current
   m_TagString: Untagged
@@ -450,7 +450,7 @@ MonoBehaviour:
     m_ActionName: UI/TrackedDeviceOrientation
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6478440605415643404}
+      - m_Target: {fileID: 6315028576557841422}
         m_TargetAssemblyTypeName: CursorLink, Assembly-CSharp
         m_MethodName: MoveMouse
         m_Mode: 0
@@ -466,7 +466,7 @@ MonoBehaviour:
     m_ActionName: 'Player/Cursor[/Mouse/position,/Pen/position]'
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6478440605415643404}
+      - m_Target: {fileID: 6315028576557841422}
         m_TargetAssemblyTypeName: CursorLink, Assembly-CSharp
         m_MethodName: MoveGamePad
         m_Mode: 0
@@ -486,7 +486,7 @@ MonoBehaviour:
     m_ActionName: 'UI/PauseToggle[/Keyboard/escape,/XInputControllerWindows1/start]'
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6478440605415643404}
+      - m_Target: {fileID: 6315028576557841422}
         m_TargetAssemblyTypeName: CursorLink, Assembly-CSharp
         m_MethodName: Select
         m_Mode: 0
@@ -522,6 +522,19 @@ MonoBehaviour:
   isStunchild: 0
   isStun_Me: 0
   isStun_Opponent: 0
+--- !u!114 &6315028576557841422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1357137494367072606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5fd6795114186b43946dba56c0bbb5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cursor: {fileID: 0}
 --- !u!1 &1738025077268335106
 GameObject:
   m_ObjectHideFlags: 0

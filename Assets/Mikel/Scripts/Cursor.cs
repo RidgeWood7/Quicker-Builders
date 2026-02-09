@@ -6,12 +6,18 @@ public class Cursor : MonoBehaviour
 
     private void OnEnable()
     {
-        player.enabled = false;
-        player.GetComponent<Rigidbody2D>().linearVelocity = Vector2.zero;
+        if (player)
+        {
+            player.enabled = false;
+            player.GetComponent<Rigidbody2D>().linearVelocity = Vector2.zero;
+        }
     }
 
     private void OnDisable()
     {
-        player.enabled = true;
+        if (player)
+        {
+            player.enabled = true;
+        }
     }
 }
