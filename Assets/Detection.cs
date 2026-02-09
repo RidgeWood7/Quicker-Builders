@@ -43,19 +43,19 @@ public class Detection : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (gameObject.name == "Detect L")
+        if (collision.gameObject.CompareTag("Tile") && gameObject.name == "Detect L")
         {
             Detection_L = false;
         }
-        if (gameObject.name == "Detect R")
+        if (collision.gameObject.CompareTag("Tile") && gameObject.name == "Detect R")
         {
             Detection_R = false;
         }
-        if (gameObject.name == "Detect U")
+        if (collision.gameObject.CompareTag("Tile") && gameObject.name == "Detect U")
         {
             Detection_U = false;
         }
-        if (gameObject.name == "Detect D")
+        if (collision.gameObject.CompareTag("Tile") && gameObject.name == "Detect D")
         {
             Detection_D = false;
         }
