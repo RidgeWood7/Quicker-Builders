@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2736503138629131965}
   - component: {fileID: 2551095996982004135}
   - component: {fileID: 8439658179077936782}
+  - component: {fileID: -4807513436664035242}
   m_Layer: 0
   m_Name: Angle
   m_TagString: Untagged
@@ -255,3 +256,17 @@ PolygonCollider2D:
       - {x: 0.32, y: 0.39}
       - {x: 0.32, y: 0.39999998}
   m_UseDelaunayMesh: 0
+--- !u!114 &-4807513436664035242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2482668066979453201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c7b7d6ed80da6a46beede88e89ba262, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isGrabbed: 1
+  player: {fileID: 0}
