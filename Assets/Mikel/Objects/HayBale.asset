@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: HayBale
   m_EditorClassIdentifier: 
   category: 0
-  prefab: {fileID: 8330304809352455343, guid: 49675c35a9f4ae8418b94082c960fbc0, type: 3}
-  icon: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  prefab: {fileID: 2870854150573871748, guid: 1279c087c900bc942a70c5c735b29630, type: 3}
+  icon: {fileID: 21300000, guid: 7855b53a8e2ad914aa922de765e5987a, type: 3}

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6542100579329152041}
   - component: {fileID: -4391507571471025047}
   m_Layer: 0
-  m_Name: Square (2)
+  m_Name: LandMine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
