@@ -455,14 +455,62 @@ MonoBehaviour:
     m_ActionId: 9caa3d8a-6b2f-4e8e-8bad-6ede561bd9be
     m_ActionName: UI/TrackedDeviceOrientation
   - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6315028576557841422}
+        m_TargetAssemblyTypeName: CursorLink, Assembly-CSharp
+        m_MethodName: MoveMouse
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 273f037c-957b-4b73-8472-46fefc53fc84
+    m_ActionName: 'Player/Cursor[/Mouse/position,/Pen/position]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6315028576557841422}
+        m_TargetAssemblyTypeName: CursorLink, Assembly-CSharp
+        m_MethodName: MoveGamePad
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 0457045e-74c5-4feb-91b2-e7c789ad4505
+    m_ActionName: 'Player/CursorGamePad[/XInputControllerWindows1/leftStick]'
+  - m_PersistentCalls:
       m_Calls: []
     m_ActionId: 472d80d7-64c5-4f94-ae75-bf9fe2d35e48
-    m_ActionName: 'UI/PauseToggle[/Keyboard/escape,/XInputControllerWindows/start]'
+    m_ActionName: 'UI/PauseToggle[/Keyboard/escape,/XInputControllerWindows1/start]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6315028576557841422}
+        m_TargetAssemblyTypeName: CursorLink, Assembly-CSharp
+        m_MethodName: Select
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: a7ab9464-d883-408c-8476-1697eb61bc80
+    m_ActionName: 'Player/Select[/XInputControllerWindows1/buttonSouth,/Mouse/press,/Pen/press]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 8404662043660973151}
 --- !u!114 &7909900556047474847
 MonoBehaviour:
   m_ObjectHideFlags: 0
