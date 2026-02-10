@@ -48,6 +48,7 @@ public class Player_Movement : MonoBehaviour
             Enable_Jump_JE = false;
             Enable_Ground_GE = false;
             Enable_Stun_SAE = false;
+            myAnimator.SetBool("Dying", true);
         }
         
         //Gravity
@@ -62,6 +63,7 @@ public class Player_Movement : MonoBehaviour
         if ((jumptimeleft_J < 0) || (Enable_Jump_JE == false) || (GetComponent<Detection>().Detection_U == true))
         {
             jumptimeleft_J = 0;
+            myAnimator.SetBool("Jumping", false);
         }
         if ((jumptime_J - jumptimeleft_J > 0.5) && ((GetComponent<Detection>().Detection_D == true) || (GetComponent<Detection>().Detection_U == true)))
         {
@@ -73,6 +75,7 @@ public class Player_Movement : MonoBehaviour
             transform.position += Vector3.up * 102 / 100 * jumptimeleft_J * Time.deltaTime * 2 * jumpheight_J / jumptime_J / jumptime_J;
             myRigidbody.linearVelocityY += Gravityspeed_G * Time.deltaTime;
             jumptimeleft_J -= Time.deltaTime * 0.5f;
+            myAnimator.SetBool("Jumping", true);
         }
         //Grounding
         if ((Input.GetKeyDown(KeyCode.DownArrow) == true || Input.GetKeyDown(KeyCode.S) == true) && Grounding_G == true && Enable_Ground_GE == true)
@@ -83,16 +86,21 @@ public class Player_Movement : MonoBehaviour
         if ((Input.GetKey(KeyCode.LeftArrow) == true || Input.GetKey(KeyCode.A) == true) && (GetComponent<Detection>().Detection_L == false) && (Moving_L == true) && (Enable_Move_ME == true))
         {
             myRigidbody.linearVelocityX = -movespeed_L;
+            myAnimator.SetBool("Xmoving", false);
+            myAnimator.SetBool("Idling", false);
         }
         //Moving R
         if ((Input.GetKey(KeyCode.RightArrow) == true || Input.GetKey(KeyCode.D) == true) && (GetComponent<Detection>().Detection_R == false) && (Moving_R == true) && (Enable_Move_ME == true))
         {
             myRigidbody.linearVelocityX = movespeed_R;
+            myAnimator.SetBool("Xmoving", true);
+            myAnimator.SetBool("Idling", false);
         }
         //Moving M
         if ((Input.GetKey(KeyCode.LeftArrow) == false && Input.GetKey(KeyCode.A) == false) && (Input.GetKey(KeyCode.RightArrow) == false && Input.GetKey(KeyCode.D) == false) && (Moving_L == true) && (Moving_R == true))
         {
             myRigidbody.linearVelocityX = 0;
+            myAnimator.SetBool("Idling", true);
         }
 
         myRigidbody.linearVelocityX = moveX;
@@ -101,19 +109,26 @@ public class Player_Movement : MonoBehaviour
         {
             moveX = MoverMoverDotEXE_IDK * movespeed_R;
             myAnimator.SetBool("Xmoving", true);
+            myAnimator.SetBool("Idling", false);
+            Debug.Log("Moving R");
         }
         else if ((GetComponent<Detection>().Detection_L == false) && (MoverMoverDotEXE_IDK < 0) && (Moving_L == false) && (Moving_R == false) && (Enable_Move_ME == true))
         {
             moveX = MoverMoverDotEXE_IDK * movespeed_L;
             myAnimator.SetBool("Xmoving", false);
+            myAnimator.SetBool("Idling", false);
+            Debug.Log("Moving L");
         }
         else if ((MoverMoverDotEXE_IDK == 0) && (Moving_L == false) && (Moving_R == false))
         {
             moveX = MoverMoverDotEXE_IDK;
+            myAnimator.SetBool("Idling", true);
+            Debug.Log("Moving M");
         }
         else
         {
             moveX = 0;
+            myAnimator.SetBool("Idling", true);
         }
         //Stun
         if (Enable_Stun_SAE == false)
