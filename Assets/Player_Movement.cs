@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 public class Player_Movement : MonoBehaviour
 {
     public bool isDead_D;
-
+    public Animator myAnimator;
     public Rigidbody2D myRigidbody;
     public float movespeed_L;
     public float movelength_L;
@@ -12,6 +12,7 @@ public class Player_Movement : MonoBehaviour
     public float movespeed_R;
     public float movelength_R;
     public bool Moving_R;
+    public float MoverMoverDotEXE_IDK;
     public float jumptime_J;
     public float jumpheight_J;
     public float jumptimeleft_J;
@@ -47,6 +48,7 @@ public class Player_Movement : MonoBehaviour
             Enable_Jump_JE = false;
             Enable_Ground_GE = false;
             Enable_Stun_SAE = false;
+            myAnimator.SetBool("Dying", true);
         }
         
         //Gravity
@@ -58,9 +60,10 @@ public class Player_Movement : MonoBehaviour
             jumptimeleft_J = jumptime_J;
             GetComponent<Detection>().Detection_D = false;
         }
-        if ((jumptimeleft_J < 0) || (Enable_Jump_JE == false))
+        if ((jumptimeleft_J < 0) || (Enable_Jump_JE == false) || (GetComponent<Detection>().Detection_U == true))
         {
             jumptimeleft_J = 0;
+            myAnimator.SetBool("Jumping", false);
         }
         if ((jumptime_J - jumptimeleft_J > 0.5) && ((GetComponent<Detection>().Detection_D == true) || (GetComponent<Detection>().Detection_U == true)))
         {
@@ -72,6 +75,7 @@ public class Player_Movement : MonoBehaviour
             transform.position += Vector3.up * 102 / 100 * jumptimeleft_J * Time.deltaTime * 2 * jumpheight_J / jumptime_J / jumptime_J;
             myRigidbody.linearVelocityY += Gravityspeed_G * Time.deltaTime;
             jumptimeleft_J -= Time.deltaTime * 0.5f;
+            myAnimator.SetBool("Jumping", true);
         }
         //Grounding
         if ((Input.GetKeyDown(KeyCode.DownArrow) == true || Input.GetKeyDown(KeyCode.S) == true) && Grounding_G == true && Enable_Ground_GE == true)
@@ -82,20 +86,50 @@ public class Player_Movement : MonoBehaviour
         if ((Input.GetKey(KeyCode.LeftArrow) == true || Input.GetKey(KeyCode.A) == true) && (GetComponent<Detection>().Detection_L == false) && (Moving_L == true) && (Enable_Move_ME == true))
         {
             myRigidbody.linearVelocityX = -movespeed_L;
+            myAnimator.SetBool("Xmoving", false);
+            myAnimator.SetBool("Idling", false);
         }
         //Moving R
         if ((Input.GetKey(KeyCode.RightArrow) == true || Input.GetKey(KeyCode.D) == true) && (GetComponent<Detection>().Detection_R == false) && (Moving_R == true) && (Enable_Move_ME == true))
         {
             myRigidbody.linearVelocityX = movespeed_R;
+            myAnimator.SetBool("Xmoving", true);
+            myAnimator.SetBool("Idling", false);
         }
         //Moving M
         if ((Input.GetKey(KeyCode.LeftArrow) == false && Input.GetKey(KeyCode.A) == false) && (Input.GetKey(KeyCode.RightArrow) == false && Input.GetKey(KeyCode.D) == false) && (Moving_L == true) && (Moving_R == true))
         {
             myRigidbody.linearVelocityX = 0;
+            myAnimator.SetBool("Idling", true);
         }
 
         myRigidbody.linearVelocityX = moveX;
-
+        //Moving Controller
+        if ((GetComponent<Detection>().Detection_R == false) && (MoverMoverDotEXE_IDK > 0) && (Moving_L == false) && (Moving_R == false) && (Enable_Move_ME == true))
+        {
+            moveX = MoverMoverDotEXE_IDK * movespeed_R;
+            myAnimator.SetBool("Xmoving", true);
+            myAnimator.SetBool("Idling", false);
+            Debug.Log("Moving R");
+        }
+        else if ((GetComponent<Detection>().Detection_L == false) && (MoverMoverDotEXE_IDK < 0) && (Moving_L == false) && (Moving_R == false) && (Enable_Move_ME == true))
+        {
+            moveX = MoverMoverDotEXE_IDK * movespeed_L;
+            myAnimator.SetBool("Xmoving", false);
+            myAnimator.SetBool("Idling", false);
+            Debug.Log("Moving L");
+        }
+        else if ((MoverMoverDotEXE_IDK == 0) && (Moving_L == false) && (Moving_R == false))
+        {
+            moveX = MoverMoverDotEXE_IDK;
+            myAnimator.SetBool("Idling", true);
+            Debug.Log("Moving M");
+        }
+        else
+        {
+            moveX = 0;
+            myAnimator.SetBool("Idling", true);
+        }
         //Stun
         if (Enable_Stun_SAE == false)
         {
@@ -110,7 +144,7 @@ public class Player_Movement : MonoBehaviour
         {
             Stuntimeleft_SA -= Time.deltaTime;
         }
-        if (Stuntimeleft_SA < 1 && Stuntimeleft_SA > -1)
+        if (Stuntimeleft_SA < 1 && Stuntimeleft_SA > -1 && isDead_D != true)
         {
             Enable_Move_ME = true;
             Enable_Jump_JE = true;
@@ -138,20 +172,10 @@ public class Player_Movement : MonoBehaviour
             jumptimeleft_J = 0;
         }
     }
+
     public void Move(InputAction.CallbackContext ctx)
     {
-        if ((GetComponent<Detection>().Detection_R == false) && (ctx.ReadValue<Vector2>().x > 0) && (Moving_L == false) && (Moving_R == false) && (Enable_Move_ME == true))
-        {
-            moveX = ctx.ReadValue<Vector2>().x * movespeed_L;
-        }
-        if ((GetComponent<Detection>().Detection_L == false) && (ctx.ReadValue<Vector2>().x < 0) && (Moving_L == false) && (Moving_R == false) && (Enable_Move_ME == true))
-        {
-            moveX = ctx.ReadValue<Vector2>().x * movespeed_R;
-        }
-        if ((ctx.ReadValue<Vector2>().x == 0) && (Moving_L == false) && (Moving_R == false))
-        {
-            moveX = ctx.ReadValue<Vector2>().x;
-        }
+        MoverMoverDotEXE_IDK = ctx.ReadValue<Vector2>().x;
     }
     public void Placing(InputAction.CallbackContext ctx)
     {
@@ -173,7 +197,7 @@ public class Player_Movement : MonoBehaviour
 
             foreach(var h in hit)
             {
-                if (h.collider.gameObject != gameObject && h.collider.gameObject.GetComponent<Stun>() != null && h.collider.gameObject.GetComponent<Player_Movement>() != null)
+                if (h.collider.gameObject != gameObject && h.collider.gameObject.GetComponent<Stun>() != null && h.collider.gameObject.GetComponent<Player_Movement>() != null && (h.collider.gameObject.GetComponent<Player_Movement>().Stuntimeleft_SA < 1 && h.collider.gameObject.GetComponent<Player_Movement>().Stuntimeleft_SA > -1))
                 {
                     h.collider.gameObject.GetComponent<Stun>().isStun_Opponent = true;
                     h.collider.gameObject.GetComponent<Player_Movement>().Stuntimeleft_SA = Stuntime_SA + 1;
