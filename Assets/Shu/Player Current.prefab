@@ -156,18 +156,18 @@ MonoBehaviour:
   myAnimator: {fileID: 6555015506542088985}
   myRigidbody: {fileID: 1566769826425659977}
   movespeed_L: 10
-  movelength_L: 10
+  movelength_L: 5
   Moving_L: 0
   movespeed_R: 10
-  movelength_R: 10
+  movelength_R: 5
   Moving_R: 0
   MoverMoverDotEXE_IDK: 0
-  jumptime_J: 1
-  jumpheight_J: 10
+  jumptime_J: 0.5
+  jumpheight_J: 5
   jumptimeleft_J: 0
   Jumping_J: 0
   Groundspeed_G: 100
-  Gravityspeed_G: 10
+  Gravityspeed_G: 20
   Grounding_G: 0
   Stuntime_SA: 3
   Stuntimeleft_SA: 0
@@ -279,7 +279,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.5, y: 1}
   m_EdgeRadius: 0
 --- !u!50 &1566769826425659977
 Rigidbody2D:
@@ -456,7 +456,7 @@ MonoBehaviour:
     m_ActionName: UI/TrackedDeviceOrientation
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6315028576557841422}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: CursorLink, Assembly-CSharp
         m_MethodName: MoveMouse
         m_Mode: 0
@@ -472,7 +472,7 @@ MonoBehaviour:
     m_ActionName: 'Player/Cursor[/Mouse/position,/Pen/position]'
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6315028576557841422}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: CursorLink, Assembly-CSharp
         m_MethodName: MoveGamePad
         m_Mode: 0
@@ -492,7 +492,7 @@ MonoBehaviour:
     m_ActionName: 'UI/PauseToggle[/Keyboard/escape,/XInputControllerWindows1/start]'
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6315028576557841422}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: CursorLink, Assembly-CSharp
         m_MethodName: Select
         m_Mode: 0
@@ -510,7 +510,7 @@ MonoBehaviour:
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
-  m_Camera: {fileID: 8404662043660973151}
+  m_Camera: {fileID: 0}
 --- !u!114 &7909900556047474847
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -816,7 +816,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.45, y: 0}
+  m_Offset: {x: 0.2, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -912,7 +912,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.45, y: 0}
+  m_Offset: {x: -0.2, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
