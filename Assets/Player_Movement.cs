@@ -1,3 +1,4 @@
+using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -27,10 +28,17 @@ public class Player_Movement : MonoBehaviour
     public bool Enable_Ground_GE;
     public bool Enable_Stun_SAE;
 
+    public RuntimeAnimatorController[] animators;
+
 
     private float moveX;
 
     //dashing
+
+    private void Awake()
+    {
+        myAnimator.runtimeAnimatorController = animators[GetComponent<PlayerInput>().playerIndex];
+    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -68,6 +76,7 @@ public class Player_Movement : MonoBehaviour
         if ((jumptime_J - jumptimeleft_J > 0.5) && ((GetComponent<Detection>().Detection_D == true) || (GetComponent<Detection>().Detection_U == true)))
         {
             jumptimeleft_J = 0;
+            myAnimator.SetBool("Jumping", false);
         }
         if (jumptimeleft_J > 0)
         {

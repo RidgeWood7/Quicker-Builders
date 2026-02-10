@@ -55,6 +55,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cfedc015b7ddfb4fa2cdd2b850f0a17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDead_D: 0
+  myAnimator: {fileID: 0}
   myRigidbody: {fileID: 3239456659040477851}
   movespeed_L: 10
   movelength_L: 10
@@ -62,6 +64,7 @@ MonoBehaviour:
   movespeed_R: 10
   movelength_R: 10
   Moving_R: 0
+  MoverMoverDotEXE_IDK: 0
   jumptime_J: 1
   jumpheight_J: 10
   jumptimeleft_J: 0
@@ -69,8 +72,17 @@ MonoBehaviour:
   Groundspeed_G: 100
   Gravityspeed_G: 10
   Grounding_G: 0
-  Ability_Stunfield_SA: 0
-  Ability_Stun_SA: 0
+  Stuntime_SA: 0
+  Stuntimeleft_SA: 0
+  Enable_Move_ME: 0
+  Enable_Jump_JE: 0
+  Enable_Ground_GE: 0
+  Enable_Stun_SAE: 0
+  animators:
+  - {fileID: 9100000, guid: e752e6a55aa42f74dbc3ea06c8f89b13, type: 2}
+  - {fileID: 22100000, guid: 53a8b628f8f66c64f9f90df549bbda59, type: 2}
+  - {fileID: 22100000, guid: 000c076f1a14ca1469562a4f98e00813, type: 2}
+  - {fileID: 22100000, guid: 5619269006132514181018cc3fab0935, type: 2}
 --- !u!212 &4923106971750869503
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -321,6 +333,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 9caa3d8a-6b2f-4e8e-8bad-6ede561bd9be
     m_ActionName: UI/TrackedDeviceOrientation
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 472d80d7-64c5-4f94-ae75-bf9fe2d35e48
+    m_ActionName: 'UI/PauseToggle[/Keyboard/escape,/XInputControllerWindows/start]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -736,6 +752,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cfedc015b7ddfb4fa2cdd2b850f0a17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDead_D: 0
+  myAnimator: {fileID: 0}
   myRigidbody: {fileID: 0}
   movespeed_L: 0
   movelength_L: 0
@@ -743,6 +761,7 @@ MonoBehaviour:
   movespeed_R: 0
   movelength_R: 0
   Moving_R: 0
+  MoverMoverDotEXE_IDK: 0
   jumptime_J: 0
   jumpheight_J: 0
   jumptimeleft_J: 0
@@ -750,8 +769,13 @@ MonoBehaviour:
   Groundspeed_G: 0
   Gravityspeed_G: 0
   Grounding_G: 0
-  Ability_Stunfield_SA: 0
-  Ability_Stun_SA: 0
+  Stuntime_SA: 0
+  Stuntimeleft_SA: 0
+  Enable_Move_ME: 0
+  Enable_Jump_JE: 0
+  Enable_Ground_GE: 0
+  Enable_Stun_SAE: 0
+  animators: []
 --- !u!1 &7338143479188732829
 GameObject:
   m_ObjectHideFlags: 0

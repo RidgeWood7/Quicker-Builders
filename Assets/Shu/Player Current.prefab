@@ -161,6 +161,7 @@ MonoBehaviour:
   movespeed_R: 10
   movelength_R: 10
   Moving_R: 0
+  MoverMoverDotEXE_IDK: 0
   jumptime_J: 1
   jumpheight_J: 10
   jumptimeleft_J: 0
@@ -174,6 +175,11 @@ MonoBehaviour:
   Enable_Jump_JE: 0
   Enable_Ground_GE: 0
   Enable_Stun_SAE: 0
+  animators:
+  - {fileID: 9100000, guid: e752e6a55aa42f74dbc3ea06c8f89b13, type: 2}
+  - {fileID: 22100000, guid: 53a8b628f8f66c64f9f90df549bbda59, type: 2}
+  - {fileID: 22100000, guid: 000c076f1a14ca1469562a4f98e00813, type: 2}
+  - {fileID: 22100000, guid: 5619269006132514181018cc3fab0935, type: 2}
 --- !u!212 &4392543099032101348
 SpriteRenderer:
   m_ObjectHideFlags: 0
