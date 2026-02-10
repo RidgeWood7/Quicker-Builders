@@ -112,6 +112,7 @@ GameObject:
   - component: {fileID: 6717774355396894119}
   - component: {fileID: 8193867662541010924}
   - component: {fileID: 7909900556047474847}
+  - component: {fileID: 6555015506542088985}
   m_Layer: 0
   m_Name: Player Current
   m_TagString: Player
@@ -152,6 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isDead_D: 0
+  myAnimator: {fileID: 6555015506542088985}
   myRigidbody: {fileID: 1566769826425659977}
   movespeed_L: 10
   movelength_L: 10
@@ -446,6 +448,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 9caa3d8a-6b2f-4e8e-8bad-6ede561bd9be
     m_ActionName: UI/TrackedDeviceOrientation
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 472d80d7-64c5-4f94-ae75-bf9fe2d35e48
+    m_ActionName: 'UI/PauseToggle[/Keyboard/escape,/XInputControllerWindows/start]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -468,6 +474,28 @@ MonoBehaviour:
   isStunchild: 0
   isStun_Me: 0
   isStun_Opponent: 0
+--- !u!95 &6555015506542088985
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1357137494367072606}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e752e6a55aa42f74dbc3ea06c8f89b13, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1738025077268335106
 GameObject:
   m_ObjectHideFlags: 0

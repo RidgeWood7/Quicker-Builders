@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 public class Player_Movement : MonoBehaviour
 {
     public bool isDead_D;
-
+    public Animator myAnimator;
     public Rigidbody2D myRigidbody;
     public float movespeed_L;
     public float movelength_L;
@@ -12,6 +12,7 @@ public class Player_Movement : MonoBehaviour
     public float movespeed_R;
     public float movelength_R;
     public bool Moving_R;
+    public float MoverMoverDotEXE_IDK;
     public float jumptime_J;
     public float jumpheight_J;
     public float jumptimeleft_J;
@@ -58,7 +59,7 @@ public class Player_Movement : MonoBehaviour
             jumptimeleft_J = jumptime_J;
             GetComponent<Detection>().Detection_D = false;
         }
-        if ((jumptimeleft_J < 0) || (Enable_Jump_JE == false))
+        if ((jumptimeleft_J < 0) || (Enable_Jump_JE == false) || (GetComponent<Detection>().Detection_U == true))
         {
             jumptimeleft_J = 0;
         }
@@ -95,7 +96,25 @@ public class Player_Movement : MonoBehaviour
         }
 
         myRigidbody.linearVelocityX = moveX;
-
+        //Moving Controller
+        if ((GetComponent<Detection>().Detection_R == false) && (MoverMoverDotEXE_IDK > 0) && (Moving_L == false) && (Moving_R == false) && (Enable_Move_ME == true))
+        {
+            moveX = MoverMoverDotEXE_IDK * movespeed_R;
+            myAnimator.SetBool("Xmoving", true);
+        }
+        else if ((GetComponent<Detection>().Detection_L == false) && (MoverMoverDotEXE_IDK < 0) && (Moving_L == false) && (Moving_R == false) && (Enable_Move_ME == true))
+        {
+            moveX = MoverMoverDotEXE_IDK * movespeed_L;
+            myAnimator.SetBool("Xmoving", false);
+        }
+        else if ((MoverMoverDotEXE_IDK == 0) && (Moving_L == false) && (Moving_R == false))
+        {
+            moveX = MoverMoverDotEXE_IDK;
+        }
+        else
+        {
+            moveX = 0;
+        }
         //Stun
         if (Enable_Stun_SAE == false)
         {
@@ -138,20 +157,10 @@ public class Player_Movement : MonoBehaviour
             jumptimeleft_J = 0;
         }
     }
+
     public void Move(InputAction.CallbackContext ctx)
     {
-        if ((GetComponent<Detection>().Detection_R == false) && (ctx.ReadValue<Vector2>().x > 0) && (Moving_L == false) && (Moving_R == false) && (Enable_Move_ME == true))
-        {
-            moveX = ctx.ReadValue<Vector2>().x * movespeed_L;
-        }
-        if ((GetComponent<Detection>().Detection_L == false) && (ctx.ReadValue<Vector2>().x < 0) && (Moving_L == false) && (Moving_R == false) && (Enable_Move_ME == true))
-        {
-            moveX = ctx.ReadValue<Vector2>().x * movespeed_R;
-        }
-        if ((ctx.ReadValue<Vector2>().x == 0) && (Moving_L == false) && (Moving_R == false))
-        {
-            moveX = ctx.ReadValue<Vector2>().x;
-        }
+        MoverMoverDotEXE_IDK = ctx.ReadValue<Vector2>().x;
     }
     public void Placing(InputAction.CallbackContext ctx)
     {
