@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Trap : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class Trap : MonoBehaviour
             _playerMovement = collision.gameObject.GetComponent<Player_Movement>();
             if (_playerMovement != null)
             {
+                _playerMovement.isDead_D = true;
             }
         }
     }
