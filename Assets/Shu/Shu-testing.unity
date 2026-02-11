@@ -2124,6 +2124,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &783065145 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3965409488367871828, guid: 6c531d371bbdd7e499b0e8b328f9a2ce, type: 3}
+  m_PrefabInstance: {fileID: 998734297}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cfedc015b7ddfb4fa2cdd2b850f0a17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &847585254
 GameObject:
   m_ObjectHideFlags: 0
@@ -2739,6 +2750,34 @@ PrefabInstance:
     - target: {fileID: 6772519348365323754, guid: 6c531d371bbdd7e499b0e8b328f9a2ce, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7629671925898700209, guid: 6c531d371bbdd7e499b0e8b328f9a2ce, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 783065145}
+    - target: {fileID: 8193867662541010924, guid: 6c531d371bbdd7e499b0e8b328f9a2ce, type: 3}
+      propertyPath: m_ActionEvents.Array.data[14].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: -6698767359490311509, guid: 6c531d371bbdd7e499b0e8b328f9a2ce, type: 3}
+    - target: {fileID: 8193867662541010924, guid: 6c531d371bbdd7e499b0e8b328f9a2ce, type: 3}
+      propertyPath: m_ActionEvents.Array.data[15].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: -6698767359490311509, guid: 6c531d371bbdd7e499b0e8b328f9a2ce, type: 3}
+    - target: {fileID: 8193867662541010924, guid: 6c531d371bbdd7e499b0e8b328f9a2ce, type: 3}
+      propertyPath: m_ActionEvents.Array.data[17].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: -6698767359490311509, guid: 6c531d371bbdd7e499b0e8b328f9a2ce, type: 3}
+    - target: {fileID: 8193867662541010924, guid: 6c531d371bbdd7e499b0e8b328f9a2ce, type: 3}
+      propertyPath: m_ActionEvents.Array.data[14].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: MoveMouse
+      objectReference: {fileID: 0}
+    - target: {fileID: 8193867662541010924, guid: 6c531d371bbdd7e499b0e8b328f9a2ce, type: 3}
+      propertyPath: m_ActionEvents.Array.data[15].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: MoveGamePad
+      objectReference: {fileID: 0}
+    - target: {fileID: 8193867662541010924, guid: 6c531d371bbdd7e499b0e8b328f9a2ce, type: 3}
+      propertyPath: m_ActionEvents.Array.data[17].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Select
       objectReference: {fileID: 0}
     - target: {fileID: 8931919420679662724, guid: 6c531d371bbdd7e499b0e8b328f9a2ce, type: 3}
       propertyPath: m_LocalScale.x
