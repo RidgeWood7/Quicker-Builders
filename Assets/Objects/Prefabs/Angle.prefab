@@ -11,9 +11,11 @@ GameObject:
   - component: {fileID: 2736503138629131965}
   - component: {fileID: 2551095996982004135}
   - component: {fileID: 8439658179077936782}
+  - component: {fileID: -4807513436664035242}
+  - component: {fileID: -3426433767178864518}
   m_Layer: 0
   m_Name: Angle
-  m_TagString: Untagged
+  m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 2482668066979453201}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -4, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -255,3 +257,29 @@ PolygonCollider2D:
       - {x: 0.32, y: 0.39}
       - {x: 0.32, y: 0.39999998}
   m_UseDelaunayMesh: 0
+--- !u!114 &-4807513436664035242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2482668066979453201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c7b7d6ed80da6a46beede88e89ba262, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isGrabbed: 1
+  player: {fileID: 0}
+--- !u!114 &-3426433767178864518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2482668066979453201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e5e0ca7834808a4a84357e432d53322, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

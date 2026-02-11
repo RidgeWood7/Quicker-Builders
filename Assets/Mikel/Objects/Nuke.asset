@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Nuke
   m_EditorClassIdentifier: 
   category: 3
-  prefab: {fileID: 680118979013680662, guid: 4abd0c41b271a53479121fa526bf64bb, type: 3}
+  prefab: {fileID: 4554407012126762317, guid: b1ab6b9f18feb3845aac22331a9099e7, type: 3}
   icon: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}

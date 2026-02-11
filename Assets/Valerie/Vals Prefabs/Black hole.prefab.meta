@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Eleazar/Setting menu prefab.prefab.meta
+guid: 2774e0e8e2fa0204b956423c935a9fcb
+========
 guid: 8490112bf4f116943b964e6272ac81b4
+>>>>>>>> cbac1b22d66a25fd0273e65f87a2f167114f9dff:Assets/Valerie/Vals Prefabs/Black hole.prefab.meta
 PrefabImporter:
   externalObjects: {}
   userData: 

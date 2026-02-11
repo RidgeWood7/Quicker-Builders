@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
+guid: 1e8a1ee70c922e34ca73c7e76c88f175
+=======
 guid: 6cf0ce15fca0a4d4f94d00b5ed9b48c3
+>>>>>>> 48fde8ef5d440811a65303bfe48b22a89b40b96a
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -37,7 +41,11 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
+<<<<<<< HEAD
+    filterMode: 0
+=======
     filterMode: 1
+>>>>>>> 48fde8ef5d440811a65303bfe48b22a89b40b96a
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -46,12 +54,20 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
+<<<<<<< HEAD
+  spriteMode: 1
+=======
   spriteMode: 2
+>>>>>>> 48fde8ef5d440811a65303bfe48b22a89b40b96a
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
+<<<<<<< HEAD
+  spritePixelsToUnits: 32
+=======
   spritePixelsToUnits: 100
+>>>>>>> 48fde8ef5d440811a65303bfe48b22a89b40b96a
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -75,7 +91,11 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
+<<<<<<< HEAD
+    textureCompression: 0
+=======
     textureCompression: 1
+>>>>>>> 48fde8ef5d440811a65303bfe48b22a89b40b96a
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -151,7 +171,11 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
+<<<<<<< HEAD
+    spriteID: 5e97eb03825dee720800000000000000
+=======
     spriteID: 
+>>>>>>> 48fde8ef5d440811a65303bfe48b22a89b40b96a
     internalID: 0
     vertices: []
     indices: 
@@ -160,7 +184,12 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
+<<<<<<< HEAD
+    nameFileIdTable:
+      Black Hole-32x32_0: -3834308092418710642
+=======
     nameFileIdTable: {}
+>>>>>>> 48fde8ef5d440811a65303bfe48b22a89b40b96a
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
