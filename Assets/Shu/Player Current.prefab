@@ -458,7 +458,7 @@ MonoBehaviour:
     m_ActionName: UI/TrackedDeviceOrientation
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: -6698767359490311509}
         m_TargetAssemblyTypeName: CursorLink, Assembly-CSharp
         m_MethodName: MoveMouse
         m_Mode: 0
@@ -474,7 +474,7 @@ MonoBehaviour:
     m_ActionName: 'Player/Cursor[/Mouse/position,/Pen/position]'
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: -6698767359490311509}
         m_TargetAssemblyTypeName: CursorLink, Assembly-CSharp
         m_MethodName: MoveGamePad
         m_Mode: 0
@@ -494,7 +494,7 @@ MonoBehaviour:
     m_ActionName: 'UI/PauseToggle[/Keyboard/escape,/XInputControllerWindows1/start]'
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: -6698767359490311509}
         m_TargetAssemblyTypeName: CursorLink, Assembly-CSharp
         m_MethodName: Select
         m_Mode: 0
@@ -577,7 +577,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5fd6795114186b43946dba56c0bbb5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cursor: {fileID: 0}
+  cursor: {fileID: 7629671925898700209}
 --- !u!1 &1738025077268335106
 GameObject:
   m_ObjectHideFlags: 0

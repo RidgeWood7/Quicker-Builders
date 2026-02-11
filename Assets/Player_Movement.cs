@@ -73,7 +73,7 @@ public class Player_Movement : MonoBehaviour
             jumptimeleft_J = 0;
             myAnimator.SetBool("Jumping", false);
         }
-        if ((jumptime_J - jumptimeleft_J > 0.5) && ((GetComponent<Detection>().Detection_D == true) || (GetComponent<Detection>().Detection_U == true)))
+        if ((jumptime_J - jumptimeleft_J > 0.2) && ((GetComponent<Detection>().Detection_D == true) || (GetComponent<Detection>().Detection_U == true)))
         {
             jumptimeleft_J = 0;
             myAnimator.SetBool("Jumping", false);
