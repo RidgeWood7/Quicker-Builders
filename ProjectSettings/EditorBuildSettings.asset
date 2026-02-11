@@ -12,5 +12,6 @@ EditorBuildSettings:
     path: Assets/Eleazar/Settings Menu.unity
     guid: 1e62a0ea7d0aa7b49adfb06a57c1b438
   m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: b55d8fc2231a91d42af1d2a6abfd9336, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
