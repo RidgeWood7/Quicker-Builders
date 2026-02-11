@@ -11,6 +11,9 @@ public class CursorLink : MonoBehaviour
 
     public void MoveMouse(InputAction.CallbackContext ctx)
     {
+        if (!cursor.gameObject.activeSelf)
+            return;
+
         if (cursor)
         {
             Debug.Log("Moving Mouse" + ctx.ReadValue<Vector2>());
@@ -19,6 +22,9 @@ public class CursorLink : MonoBehaviour
     }
     public void MoveGamePad(InputAction.CallbackContext ctx)
     {
+        if (!cursor.gameObject.activeSelf)
+            return;
+
         StickPosition = ctx.ReadValue<Vector2>();
     }
     private void Update()
@@ -30,6 +36,9 @@ public class CursorLink : MonoBehaviour
     }
     public void Select(InputAction.CallbackContext ctx)
     {
+        if (!cursor.gameObject.activeSelf)
+            return;
+
         Debug.Log("Selecting");
         if (ctx.started)
         {
