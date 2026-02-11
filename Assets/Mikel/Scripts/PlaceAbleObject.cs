@@ -16,11 +16,12 @@ public class PlaceAbleObject : MonoBehaviour
     {
         if (isGrabbed)
         {
-            Vector2 screenPos = player.GetComponent<CursorLink>().cursor.transform.position;
+            Vector2 screenPos = player.GetComponent<CursorLink>().cursor.GetComponent<RectTransform>().position;
+            Debug.Log("Grabbing" + screenPos);
             Vector2 worldPos = Camera.main.ScreenToWorldPoint(screenPos);
+            Debug.Log("World Pos" + worldPos);
             worldPos.x = Mathf.Round(worldPos.x);
             worldPos.y = Mathf.Round(worldPos.y);
-
             transform.position = worldPos;
         }
     }

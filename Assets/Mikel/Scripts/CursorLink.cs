@@ -11,7 +11,11 @@ public class CursorLink : MonoBehaviour
 
     public void MoveMouse(InputAction.CallbackContext ctx)
     {
-        cursor.GetComponent<RectTransform>().position = ctx.ReadValue<Vector2>();
+        if (cursor)
+        {
+            Debug.Log("Moving Mouse" + ctx.ReadValue<Vector2>());
+            cursor.GetComponent<RectTransform>().position = ctx.ReadValue<Vector2>();
+        }
     }
     public void MoveGamePad(InputAction.CallbackContext ctx)
     {
@@ -19,7 +23,10 @@ public class CursorLink : MonoBehaviour
     }
     private void Update()
     {
-        cursor.GetComponent<RectTransform>().position += (Vector3)StickPosition;
+        if (cursor)
+        {
+            cursor.GetComponent<RectTransform>().position += (Vector3)StickPosition;
+        }
     }
     public void Select(InputAction.CallbackContext ctx)
     {
