@@ -1513,7 +1513,6 @@ GameObject:
   - component: {fileID: 2097712340}
   - component: {fileID: 2097712339}
   - component: {fileID: 2097712338}
-  - component: {fileID: 2097712341}
   m_Layer: 5
   m_Name: Play
   m_TagString: Untagged
@@ -1597,18 +1596,6 @@ MonoBehaviour:
           m_StringArgument: Main Game
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2097712341}
-        m_TargetAssemblyTypeName: StartMenu, Assembly-CSharp
-        m_MethodName: OnButtonClick
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &2097712339
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1647,18 +1634,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2097712336}
   m_CullTransparentMesh: 1
---- !u!114 &2097712341
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2097712336}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b6b0e913521366499e0b6d1852fc11f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

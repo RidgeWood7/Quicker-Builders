@@ -9,7 +9,10 @@ EditorBuildSettings:
     path: Assets/Final Work/Main Menu.unity
     guid: 0f512048b7c23354d982e5ee0f23f4d0
   - enabled: 1
-    path: Assets/Eleazar/Settings Menu.unity
+    path: Assets/Final Work/Main Game.unity
+    guid: c111cafb1547d634c939f238567b7099
+  - enabled: 1
+    path: Assets/Final Work/Settings Menu.unity
     guid: 1e62a0ea7d0aa7b49adfb06a57c1b438
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: b55d8fc2231a91d42af1d2a6abfd9336, type: 2}
